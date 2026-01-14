@@ -1,0 +1,134 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Noto Sans JP", system-ui, sans-serif;
+  background-color: #f5f7fb;
+  color: #172131;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 20px 48px;
+}
+
+.page {
+  width: min(1100px, 100%);
+  display: grid;
+  gap: 32px;
+}
+
+.hero {
+  position: relative;
+  min-height: 360px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(120deg, rgba(9, 30, 66, 0.86), rgba(11, 96, 150, 0.65)),
+    url("https://images.unsplash.com/photo-1526378722520-1f4b8c0549d2?auto=format&fit=crop&w=1400&q=80")
+      center/cover;
+  box-shadow: 0 24px 45px rgba(15, 32, 67, 0.18);
+}
+
+.hero__overlay {
+  height: 100%;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  color: #f5f8ff;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 32, 67, 0.1) 0%,
+    rgba(15, 32, 67, 0.55) 60%,
+    rgba(15, 32, 67, 0.8) 100%
+  );
+}
+
+.hero__badge {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.hero__title {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.hero__lead {
+  max-width: 560px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero__meta span {
+  background: rgba(245, 248, 255, 0.18);
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.detail-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 14px 30px rgba(23, 33, 49, 0.08);
+  border: 1px solid rgba(33, 58, 89, 0.08);
+  display: grid;
+  gap: 10px;
+}
+
+.detail-card__label {
+  font-size: 0.9rem;
+  color: #6f7b8f;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.detail-card__value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #1a2b3d;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 20px 16px 36px;
+  }
+
+  .hero {
+    min-height: 300px;
+  }
+
+  .hero__overlay {
+    padding: 32px 24px;
+  }
+}
